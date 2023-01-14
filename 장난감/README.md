@@ -209,7 +209,14 @@ driver.find_element(By.NAME, '알아온 비밀번호 name').send_keys('비밀번
 driver.find_element(By.XPATH, '알아온 로그인 버튼 xpath').click()
 ```
 
-이 부분에서도 셀레니움이 4버전이 되면서 메소드 사용 방식에 변화가 생겼다.  
+이 부분에서도 셀레니움이 4버전이 되면서 메소드 사용 방식에 변화가 생겼었다.  
 내가 찾아본 블로그 들에선 수정 전과 같은 방식이었고  
+원래는 경고 정도만 띄우며 호환이 됐었는데, 4.3 버전 부터 에러 처리가 된 것 같다.
+
 지금 저렇게 코드를 짜자 `AttributeError: 'WebDriver' object has no attribute 'find_element_by_name’` 에러가 떴었다.  
 물론 수정 후엔 잘 된다.
+
+(참고 : https://stackoverflow.com/questions/72773206/selenium-python-attributeerror-webdriver-object-has-no-attribute-find-el)
+
+
+
