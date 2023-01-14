@@ -211,4 +211,5 @@ driver.find_element(By.XPATH, '알아온 로그인 버튼 xpath').click()
 
 이 부분에서도 셀레니움이 4버전이 되면서 메소드 사용 방식에 변화가 생겼다.  
 내가 찾아본 블로그 들에선 수정 전과 같은 방식이었고  
-지금 저렇게 코드를 짜자 `AttributeError: 'WebDriver' object has no attribute 'find_element_by_name’` 에러가 떴었다.
+지금 저렇게 코드를 짜자 `AttributeError: 'WebDriver' object has no attribute 'find_element_by_name’` 에러가 떴었다.  
+물론 수정 후엔 잘 된다.
