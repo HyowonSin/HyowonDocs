@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+}
+
+body {
+    font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+    margin: 0;
+    padding: 24px;
+    background-color: #0d1117;
+    color: #c9d1d9;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0;
+    padding: 0 20px;
+}
+
+.input-section {
+    background: #161b22;
+    padding: 16px;
+    border-radius: 6px;
+    border: 1px solid #30363d;
+    margin-bottom: 24px;
+    display: flex;
+    gap: 12px;
+}
+
+#schemaName {
+    flex: 1;
+    padding: 8px 12px;
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    color: #c9d1d9;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+#schemaName:focus {
+    outline: none;
+    border-color: #58a6ff;
+    box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.2);
+}
+
+#createButton {
+    padding: 8px 16px;
+    background-color: #238636;
+    color: #ffffff;
+    border: 1px solid rgba(240, 246, 252, 0.1);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: inherit;
+    transition: all 0.2s;
+}
+
+#createButton:hover:not(:disabled) {
+    background-color: #2ea043;
+}
+
+#createButton:disabled {
+    background-color: #238636;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.loading-message {
+    background: #161b22;
+    padding: 16px;
+    border-radius: 6px;
+    border: 1px solid #30363d;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.loading-spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #30363d;
+    border-top: 2px solid #58a6ff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    flex-shrink: 0;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.schemas-section {
+    background: #161b22;
+    padding: 16px;
+    border-radius: 6px;
+    border: 1px solid #30363d;
+}
+
+.schemas-section h2 {
+    margin: 0 0 16px 0;
+    color: #c9d1d9;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.schema-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    gap: 12px;
+    background: #0d1117;
+}
+
+.schema-item:last-child {
+    margin-bottom: 0;
+}
+
+.schema-item span {
+    flex: 1;
+    color: #c9d1d9;
+    font-size: 14px;
+}
+
+.open-btn {
+    padding: 6px 12px;
+    background-color: #1f6feb;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 12px;
+    border: 1px solid rgba(240, 246, 252, 0.1);
+    transition: all 0.2s;
+}
+
+.open-btn:hover {
+    background-color: #388bfd;
+}
+
+.delete-btn {
+    padding: 6px 12px;
+    background-color: #21262d;
+    color: #f85149;
+    border: 1px solid rgba(240, 246, 252, 0.1);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: inherit;
+    transition: all 0.2s;
+}
+
+.delete-btn:hover {
+    background-color: #f85149;
+    color: #ffffff;
+}
+
+#loadingText {
+    color: #8b949e;
+    font-size: 14px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* 스크롤바 스타일링 */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0d1117;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #30363d;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3f4448;
+}
