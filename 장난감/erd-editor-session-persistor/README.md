@@ -18,4 +18,4 @@ The hosted server maintains sessions continuously, allowing you to access your E
 
 The current implementation uses Puppeteer for browser automation, which is a temporary solution. Future updates will implement a more robust and efficient approach for session management.
 
-![ERD Editor Manager Screenshot](https://github.com/user-attachments/assets/fca258a0-99f4-4c50-a45a-b5561fcb4311)
+<img width="700" alt="Image" src="https://github.com/user-attachments/assets/fca258a0-99f4-4c50-a45a-b5561fcb4311" />
