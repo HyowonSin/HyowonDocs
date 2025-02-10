@@ -56,7 +56,7 @@ async function initBrowser() {
         console.log('Initializing browser...');
         globalBrowser = await puppeteer.launch({ 
             headless: false,
-            slowMo: 100,
+            slowMo: 50,
             args: ['--no-sandbox', '--disable-setuid-sandbox']
         });
         

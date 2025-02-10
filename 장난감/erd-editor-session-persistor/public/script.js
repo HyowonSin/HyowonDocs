@@ -75,13 +75,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else {
                     schemasList.innerHTML = data.schemas.map(schema => `
                         <div class="schema-item">
-                            <span>${schema.name}</span>
+                            <span class="schema-name">${schema.name}</span>
+                            <input type="text" class="url-input" value="${schema.url}" readonly>
+                            <button class="copy-btn" data-url="${schema.url}">Copy</button>
                             <a href="${schema.url}" target="_blank" class="open-btn">Open</a>
                             <button class="delete-btn" data-name="${schema.name}">Delete</button>
                         </div>
                     `).join('');
 
                     attachDeleteListeners();
+                    attachCopyListeners();
                 }
             }
         } catch (error) {
@@ -113,6 +116,22 @@ document.addEventListener('DOMContentLoaded', function() {
                         alert('Error while deleting: ' + error.message);
                     }
                 }
+            });
+        });
+    }
+
+    function attachCopyListeners() {
+        document.querySelectorAll('.copy-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const url = this.dataset.url;
+                navigator.clipboard.writeText(url).then(() => {
+                    // 복사 성공 표시
+                    const originalText = this.textContent;
+                    this.textContent = 'Copied!';
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                    }, 1000);
+                });
             });
         });
     }
